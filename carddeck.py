@@ -20,9 +20,11 @@ class CardDeck:
     def cards(self):
         return self._cards
 
-    @property
+#    @property
     def dealer_name(self): # getter property
         return self._dealer_name
+
+    dealer_name = property(dealer_name)
 
     @dealer_name.setter
     def dealer_name(self, dealer):
