@@ -14,4 +14,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)  # <4>
     main_window = HelloWindow()
     main_window.show()
-    sys.exit(app.exec_())
+    result = app.exec_()
+    print(dir(app))
+    sys.exit(result)
+
