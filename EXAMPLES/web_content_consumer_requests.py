@@ -5,7 +5,6 @@ import requests
 
 
 BASE_URL = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/'  # <1>
-
 API_KEY = 'b619b55d-faa3-442b-a119-dd906adc79c8' # <2>
 
 
