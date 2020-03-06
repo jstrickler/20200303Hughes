@@ -7,7 +7,7 @@ from PyQt5.QtGui import QColor
 
 from ui_standard_dialogs import Ui_StandardDialogs
 
-class StandardDialogsMain(QMainWindow):   
+class StandardDialogsMain(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
 
@@ -18,9 +18,9 @@ class StandardDialogsMain(QMainWindow):
 
         # Connect up the buttons.
         self.ui.btFile.clicked.connect(self._choose_file)  # <1>
-        self.ui.btColor.clicked.connect(self._choose_color) 
-        self.ui.btMessage.clicked.connect(self._show_error) 
-        self.ui.btInput.clicked.connect(self._get_input) 
+        self.ui.btColor.clicked.connect(self._choose_color)
+        self.ui.btMessage.clicked.connect(self._show_error)
+        self.ui.btInput.clicked.connect(self._get_input)
        # self.ui.BUTTON_NAME.clicked.connect(self._pushed)
 
     def _choose_file(self):
@@ -35,7 +35,7 @@ class StandardDialogsMain(QMainWindow):
                 result.red(),  # <5>
                 result.green(),
                 result.blue()
-            )                                                      
+            )
         )
 
 
@@ -45,11 +45,11 @@ class StandardDialogsMain(QMainWindow):
         self.ui.statusbar.showMessage('Diplaying Error')
 
     def _get_input(self):
-        text, ok = QInputDialog.getText(self, 'Input Dialog', 
+        text, ok = QInputDialog.getText(self, 'Input Dialog',
             'Enter your name:')  # <7>
         if ok:
             self.ui.statusbar.showMessage("Your name is " + text)
-    
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = StandardDialogsMain()

@@ -3,7 +3,7 @@
 import random
 from multiprocessing.dummy import Pool # <1>
 
-POOL_SIZE = 30 # <2>
+POOL_SIZE = 32 # <2>
 
 with open('../DATA/words.txt') as words_in:
     WORDS = [w.strip() for w in words_in] # <3>
@@ -15,8 +15,8 @@ def my_task(word):  # <5>
 
 tpool = Pool(POOL_SIZE) # <6>
 
-WORD_LIST = tpool.map(my_task, WORDS) # <7>
+word_list = tpool.map(my_task, WORDS) # <7>
 
-print(WORD_LIST[:20])  # <8>
+print(word_list[:20])  # <8>
 
-print("Processed {} words.".format(len(WORD_LIST)))
+print("Processed {} words.".format(len(word_list)))

@@ -8,11 +8,11 @@ with sqlite3.connect("../DATA/presidents.db") as s3conn:
     party_query = '''
     select firstname, lastname
     from presidents
-        where party = ?
+        where party = ? and dob == ?
     '''  # <1>
 
     for party in 'Federalist', 'Whig':
         print(party)
-        s3cursor.execute(party_query, (party,))  # <2>
+        s3cursor.execute(party_query, (party, '1900'))  # <2>
         print(s3cursor.fetchall())
         print()
